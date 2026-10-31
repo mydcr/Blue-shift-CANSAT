@@ -27,6 +27,22 @@ filterButtons.forEach(button => {
 
 // Stop placeholder social links from jumping to the top of the page.
 // Replace href="#" in index.html with real links before publishing.
+document.querySelectorAll("instagram-link").forEach(link => {
+  link.addEventListener("click", event => {
+    if (link.getAttribute("https://www.instagram.com/blueshiftcansat/") === "#") {
+      event.preventDefault();
+      alert("Replace this placeholder with your team's real social media link.");
+    }
+  });
+});
+document.querySelectorAll("[data-placeholder-link]").forEach(link => {
+  link.addEventListener("click", event => {
+    if (link.getAttribute("href") === "#") {
+      event.preventDefault();
+      alert("Replace this placeholder with your team's real social media link.");
+    }
+  });
+});
 document.querySelectorAll("[data-placeholder-link]").forEach(link => {
   link.addEventListener("click", event => {
     if (link.getAttribute("href") === "#") {
